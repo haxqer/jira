@@ -15,7 +15,14 @@
 
 ## How to hack jira
 
-`docker exec jira-srv java -jar /var/agent/atlassian-agent.jar  -p jira -m haxqer666@gmail.com -n haxqer666@gmail.com -o http://ip -s you-server-id-xxxx`
+```
+docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \ 
+    -p jira \
+    -m haxqer666@gmail.com \
+    -n haxqer666@gmail.com \
+    -o http://website \
+    -s you-server-id-xxxx
+```
 
 ## How to hack jira plugin
 
@@ -24,13 +31,37 @@
 2. Find `App Key` of BigGantt is : `eu.softwareplant.biggantt`
 3. Execute :
 
-`docker exec jira-srv java -jar /var/agent/atlassian-agent.jar -p eu.softwareplant.biggantt -m haxqer666@gmail.com -n haxqer666@gmail.com -o http://ip -s you-server-id-xxxx`
+```
+docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -p eu.softwareplant.biggantt \
+    -m haxqer666@gmail.com \
+    -n haxqer666@gmail.com \
+    -o http://website \
+    -s you-server-id-xxxx
+```
 
 4. Paste your license 
 
-## install docker & docker-compose
+## Install docker & docker-compose
 - If you use `debian`, just do it.
+```
+    ./script/debian-install-docker.sh
+    ./script/linux-install-docker-compose.sh
+```
 
-`./script/debian-install-docker.sh`
+## Set Proxy
 
-`./script/linux-install-docker-compose.sh`
+path : `~/.docker/config.json`
+
+content : 
+```
+{
+    "proxies": {
+        "default": {
+         "httpProxy": "http://ip:port",
+         "httpsProxy": "http://ip:port"
+        }
+    }
+}
+```
+
