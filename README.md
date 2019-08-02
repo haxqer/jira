@@ -25,6 +25,7 @@
 3. Execute :
 
 `docker exec jira-srv java -jar /var/agent/atlassian-agent.jar -p eu.softwareplant.biggantt -m haxqer666@gmail.com -n haxqer666@gmail.com -o http://ip -s you-server-id-xxxx`
+
 4. Paste your license 
 
 ## install docker & docker-compose
