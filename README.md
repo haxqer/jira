@@ -1,5 +1,8 @@
 # jira
 
+## requirement
+- docker-compose: 17.09.0+
+
 ## How to run
 
 - start jira
