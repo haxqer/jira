@@ -13,5 +13,4 @@ apt-get update -y \
    stable" \
 && apt-get update -y \
 && apt-get install -y docker-ce docker-ce-cli containerd.io \
-&& gpasswd -a hadoop docker \
 && docker run hello-world
