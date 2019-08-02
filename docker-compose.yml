@@ -10,8 +10,10 @@ services:
     volumes:
       - ./jira:/var/jira
     networks:
-      - jiranetwork  
-    # restart: always  
+      - jiranetwork
+#    environment:
+#      - JVM_OPTS=-Xmx12g -Xms12g -XX:MaxPermSize=1024m
+    restart: always
 
   mysql:
     image: mysql:5.7
@@ -22,12 +24,12 @@ services:
       - MYSQL_USER=jira
       - MYSQL_PASSWORD=123123
       - TZ='Asia/Shanghai'
-    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_bin']
     ports:
       - "13306:3306"
     volumes:
       - ./mysql:/var/lib/mysql
-    # restart: always
+    restart: always
     networks:
       - jiranetwork
 
