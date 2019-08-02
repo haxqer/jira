@@ -2,9 +2,13 @@
 
 ## How to run
 
-start `docker-compose up`
+- start jira
 
-start daemon  `docker-compose up -d`
+`docker-compose up`
+
+- start jira daemon
+
+`docker-compose up -d`
 
 ## How to hacker
 
