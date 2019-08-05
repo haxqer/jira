@@ -2,26 +2,18 @@ FROM openjdk:8-stretch
 
 LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.3.0"
 
-ARG work_user=jira
-ENV TZ='Asia/Shanghai' \ 
-    JIRA_USER=jira \
-    JIRA_GROUP=jira \
-    JIRA_HOME=/var/jira \
+ENV JIRA_HOME=/var/jira \
+    JVM_MINIMUM_MEMORY=1g \
+    JVM_MAXIMUM_MEMORY=6g \
+    JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=4g' \
     JIRA_INSTALL=/opt/jira \
-    AGENT_PATH=/var/agent/atlassian-agent.jar 
+    AGENT_PATH=/var/agent/atlassian-agent.jar
 
-ENV JAVA_OPTS="-javaagent:${AGENT_PATH} ${JAVA_OPTS}" 
+ENV JAVA_OPTS="-javaagent:${AGENT_PATH} ${JAVA_OPTS}"
 
-RUN export CONTAINER_USER=jira                      &&  \
-    export CONTAINER_GROUP=jira                     &&  \
-    groupadd $CONTAINER_GROUP                       &&  \
-    useradd -g $CONTAINER_GROUP $CONTAINER_USER     
+ADD . $JIRA_INSTALL
+ADD ./temp/atlassian-agent.jar $AGENT_PATH
 
-ADD --chown=jira:jira . $JIRA_INSTALL 
-ADD --chown=jira:jira ./temp/atlassian-agent.jar $AGENT_PATH
-ADD --chown=jira:jira ./temp/dbconfig.xml $JIRA_HOME/dbconfig.xml
-
-USER jira
 WORKDIR $JIRA_INSTALL
 EXPOSE 8080
 

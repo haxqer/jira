@@ -3,6 +3,11 @@ services:
   jira:
     image: haxqer/jira
     container_name: jira-srv
+    environment:
+      - TZ='Asia/Shanghai'
+#      - JVM_MINIMUM_MEMORY=1g
+#      - JVM_MAXIMUM_MEMORY=12g
+#      - JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=8g'
     depends_on:
       - mysql
     ports:
@@ -10,20 +15,18 @@ services:
     volumes:
       - ./jira:/var/jira
     networks:
-      - jiranetwork
-#    environment:
-#      - JVM_OPTS=-Xmx12g -Xms12g -XX:MaxPermSize=1024m
+      - jira-network
     restart: always
 
   mysql:
     image: mysql:5.7
     container_name: mysql-jira
     environment:
-      - MYSQL_DATABASE=jira 
+      - TZ='Asia/Shanghai'
+      - MYSQL_DATABASE=jira
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_USER=jira
       - MYSQL_PASSWORD=123123
-      - TZ='Asia/Shanghai'
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_bin']
     ports:
       - "13306:3306"
@@ -31,8 +34,8 @@ services:
       - ./mysql:/var/lib/mysql
     restart: always
     networks:
-      - jiranetwork
+      - jira-network
 
 networks:
-  jiranetwork:
+  jira-network:
     driver: bridge
