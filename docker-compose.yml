@@ -14,9 +14,9 @@ services:
       - "8080:8080"
     volumes:
       - ./jira:/var/jira
-    networks:
-      - jira-network
     restart: always
+    networks:
+      - network-bridge
 
   mysql:
     image: mysql:5.7
@@ -34,8 +34,8 @@ services:
       - ./mysql:/var/lib/mysql
     restart: always
     networks:
-      - jira-network
+      - network-bridge
 
 networks:
-  jira-network:
+  network-bridge:
     driver: bridge
