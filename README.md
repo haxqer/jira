@@ -42,7 +42,7 @@
 ## How to hack jira
 
 ```
-docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \ 
+docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -p jira \
     -m haxqer666@gmail.com \
     -n haxqer666@gmail.com \
