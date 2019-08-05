@@ -7,11 +7,15 @@
 
 - start jira & mysql
 
-`docker-compose up`
+```
+    docker-compose up
+```
 
 - start jira & mysql daemon
 
-`docker-compose up -d`
+```
+    docker-compose up -d
+```
 
 - default db(mysql5.7) configure:
 
@@ -28,7 +32,9 @@
 
 - start jira
 
-`docker run -p 8080:8080 -v ./jira:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira`
+```
+    docker run -p 8080:8080 -v ./jira:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira
+```
 
 - config your own db:
 
