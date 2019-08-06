@@ -4,8 +4,8 @@ LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.3.0"
 
 ENV JIRA_HOME=/var/jira \
     JVM_MINIMUM_MEMORY=1g \
-    JVM_MAXIMUM_MEMORY=6g \
-    JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=4g' \
+    JVM_MAXIMUM_MEMORY=3g \
+    JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=2g' \
     JIRA_INSTALL=/opt/jira \
     AGENT_PATH=/var/agent/atlassian-agent.jar
 
