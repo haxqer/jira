@@ -1,4 +1,5 @@
 # jira
+default port: 8080
 
 ## requirement
 - docker-compose: 17.09.0+
