@@ -9,7 +9,9 @@ default port: 8080
 - start jira & mysql
 
 ```
-    docker-compose up
+    git clone https://github.com/haxqer/jira.git \
+        && cd jira \
+        && docker-compose up
 ```
 
 - start jira & mysql daemon
