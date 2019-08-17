@@ -41,6 +41,8 @@ default port: 8080
 
 - config your own db:
 
+## option
+
 ## Install docker & docker-compose
 - If you use `debian`, just do it.
 ```
