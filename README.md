@@ -36,7 +36,7 @@ default port: 8080
 - start jira
 
 ```
-    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira
+    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:rm
 ```
 
 - config your own db:

@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   jira:
-    image: haxqer/jira
+    image: haxqer/jira:rm
     container_name: jira-srv
     environment:
       - TZ='Asia/Shanghai'
