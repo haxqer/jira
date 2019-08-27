@@ -4,7 +4,8 @@
 default port: 8080
 
 ## requirement
-- docker-compose: 17.09.0+
+- docker: 17.09.0+
+- docker-composer: 17.06.0+
 
 ## How to run with docker-compose
 
