@@ -13,7 +13,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - jira_home_data:/var/jira
+      - home_data:/var/jira
     restart: always
     networks:
       - network-bridge
@@ -31,7 +31,7 @@ services:
     ports:
       - "13306:3306"
     volumes:
-      - jira_mysql_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     restart: always
     networks:
       - network-bridge
@@ -41,7 +41,7 @@ networks:
     driver: bridge
 
 volumes:
-  jira_home_data:
+  home_data:
     external: false
-  jira_mysql_data:
+  mysql_data:
     external: false
