@@ -14,6 +14,7 @@ default port: 8080
 ```
     git clone https://github.com/haxqer/jira.git \
         && cd jira \
+        && docker-compose pull \
         && docker-compose up
 ```
 
