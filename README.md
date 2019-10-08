@@ -1,8 +1,12 @@
+[![docker pulls](https://img.shields.io/docker/pulls/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/)  [![docker stars](https://img.shields.io/docker/stars/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/) [![image metadata](https://images.microbadger.com/badges/image/haxqer/jira.svg)](https://microbadger.com/images/haxqer/jira "haxqer/jira image metadata")
+
+
 # jira
 default port: 8080
 
 ## requirement
-- docker-compose: 17.09.0+
+- docker: 17.09.0+
+- docker-compose: 1.24.0+
 
 ## How to run with docker-compose
 
