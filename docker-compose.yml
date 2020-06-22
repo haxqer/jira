@@ -13,7 +13,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - home_date:/var/jira
+      - home_data:/var/jira
     restart: always
     networks:
       - network-bridge
@@ -41,7 +41,7 @@ networks:
     driver: bridge
 
 volumes:
-  home_date:
+  home_data:
     external: false
   mysql_data:
     external: false
