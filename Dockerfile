@@ -1,8 +1,8 @@
 FROM openjdk:8-stretch
 
-LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.8.1"
+LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.11.0"
 
-ARG JIRA_VERSION=8.8.1
+ARG JIRA_VERSION=8.11.0
 # Production: jira-software jira-core
 ARG JIRA_PRODUCT=jira-software
 ARG AGENT_VERSION=1.2.2
