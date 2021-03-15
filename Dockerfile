@@ -1,4 +1,4 @@
-FROM openjdk:8-stretch
+FROM openjdk:11.0
 
 LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.11.0"
 
