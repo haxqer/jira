@@ -7,7 +7,8 @@ I'll explain dockerfile line by line
 `FROM openjdk:11.0`
 
 This is the base image, and you can choose from most of the JDK-based Docker images.
-For example: ``, ``, 
+
+For example: `openjdk:11.0`, `openjdk:8-stretch`
 
 ---
 
