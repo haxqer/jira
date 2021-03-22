@@ -4,7 +4,7 @@ services:
     image: haxqer/jira
     container_name: jira-srv
     environment:
-      - TZ='Asia/Shanghai'
+      - TZ=Asia/Shanghai
 #      - JVM_MINIMUM_MEMORY=1g
 #      - JVM_MAXIMUM_MEMORY=12g
 #      - JVM_CODE_CACHE_ARGS='-XX:InitialCodeCacheSize=1g -XX:ReservedCodeCacheSize=8g'
@@ -22,7 +22,7 @@ services:
     image: mysql:5.7
     container_name: mysql-jira
     environment:
-      - TZ='Asia/Shanghai'
+      - TZ=Asia/Shanghai
       - MYSQL_DATABASE=jira
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_USER=jira
