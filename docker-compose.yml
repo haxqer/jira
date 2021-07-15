@@ -28,8 +28,8 @@ services:
       - MYSQL_USER=jira
       - MYSQL_PASSWORD=123123
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_bin']
-    ports:
-      - "13306:3306"
+#    ports:
+#      - "13306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     restart: always
