@@ -1,11 +1,11 @@
 FROM openjdk:8-stretch
 
-LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.18.1"
+LABEL maintainer="haxqer <haxqer666@gmail.com>" version="8.22.6"
 
-ARG JIRA_VERSION=8.18.1
+ARG JIRA_VERSION=8.22.6
 # Production: jira-software jira-core
 ARG JIRA_PRODUCT=jira-software
-ARG AGENT_VERSION=1.2.2
+ARG AGENT_VERSION=1.3.3
 ARG MYSQL_DRIVER_VERSION=5.1.48
 
 ENV JIRA_USER=jira \
