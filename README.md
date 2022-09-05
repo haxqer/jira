@@ -78,6 +78,20 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
 
 4. Paste your license 
 
+## How to upgrade
+
+```shell
+cd jira
+git pull haxqer/jira:rm && docker-compose stop
+docker-compose rm
+```
+
+enter `y`, then start server
+
+```shell
+docker-compose up -d
+```
+
 ## Install docker & docker-compose
 - If you use `debian`, just do it.
 ```
