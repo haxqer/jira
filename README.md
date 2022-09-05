@@ -81,8 +81,8 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
 ## How to upgrade
 
 ```shell
-cd jira
-git pull haxqer/jira:rm && docker-compose stop
+cd jira && git pull
+docker pull haxqer/jira:rm && docker-compose stop
 docker-compose rm
 ```
 
