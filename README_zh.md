@@ -12,7 +12,7 @@
 - docker: 17.09.0+
 - docker-compose: 1.24.0+
 
-## 如何使用 docker-compose 启动 jira
+## 使用 docker-compose 启动 jira
 
 -  启动 jira & mysql
 
@@ -41,7 +41,7 @@
     passwd=123123
 ```
 
-## 如果使用 docker 启动
+## 使用 docker 启动
 
 - 启动 jira
 
@@ -52,7 +52,7 @@
 - 然后配置你的数据库
 
 
-## 如何破解 jira
+## 破解 jira
 
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
@@ -63,7 +63,9 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -s you-server-id-xxxx
 ```
 
-## 如何破解 jira 的插件
+初次安装 jira 时，安装页面会显示你的 server-id
+
+## 破解 jira 的插件
 
 - 例如: 你想要破解 BigGantt 插件
 1. 从 jira marketplace 中安装 BigGantt 插件
@@ -77,6 +79,18 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -n haxqer666@gmail.com \
     -o http://website \
     -s you-server-id-xxxx
+```
+
+在 `System` -> `System Info` 页面的 `Server ID` 字段即为你的 server-id
+
+例如:
+```
+docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -p eu.softwareplant.biggantt \
+    -m haxqer666@gmail.com \
+    -n haxqer666@gmail.com \
+    -o https://jira.haxqer.cm \
+    -s BSFN-Q264-VGCZ-0AOE
 ```
 
 4. 最后粘贴生成的 licence
