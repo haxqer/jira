@@ -6,15 +6,15 @@
 
 [README](README.md) | [中文文档](README_zh.md)
 
-default port: 8080
+默认端口: `8080`
 
-## requirement
+## 环境要求
 - docker: 17.09.0+
 - docker-compose: 1.24.0+
 
-## How to run with docker-compose
+## 如何使用 docker-compose 启动 jira
 
-- start jira & mysql
+-  启动 jira & mysql
 
 ```
     git clone https://github.com/haxqer/jira.git \
@@ -24,13 +24,13 @@ default port: 8080
         && docker-compose up
 ```
 
-- start jira & mysql daemon
+- 以守护进程的方式启动 jira & mysql
 
 ```
     docker-compose up -d
 ```
 
-- default db(mysql5.7) configure:
+- 默认的 数据库(mysql5.7) 配置:
 
 ```bash
     driver=mysql5.7+
@@ -41,18 +41,18 @@ default port: 8080
     passwd=123123
 ```
 
-## How to run with docker
+## 如果使用 docker 启动
 
-- start jira
+- 启动 jira
 
 ```
     docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:rm
 ```
 
-- config your own db:
+- 然后配置你的数据库
 
 
-## How to hack jira
+## 如何破解 jira
 
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
@@ -63,12 +63,12 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -s you-server-id-xxxx
 ```
 
-## How to hack jira plugin
+## 如何破解 jira 的插件
 
-- .eg I want to use BigGantt plugin
-1. Install BigGantt from jira marketplace.
-2. Find `App Key` of BigGantt is : `eu.softwareplant.biggantt`
-3. Execute :
+- 例如: 你想要破解 BigGantt 插件
+1. 从 jira marketplace 中安装 BigGantt 插件
+2. 查看 BigGantt 的 `App Key` 是 : `eu.softwareplant.biggantt`
+3. 然后执行 :
 
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
@@ -79,9 +79,9 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -s you-server-id-xxxx
 ```
 
-4. Paste your license 
+4. 最后粘贴生成的 licence
 
-## How to upgrade
+## 如何升级
 
 ```shell
 cd jira && git pull
@@ -89,32 +89,17 @@ docker pull haxqer/jira:rm && docker-compose stop
 docker-compose rm
 ```
 
-enter `y`, then start server
+输入 `y` 之后重启 jira:
 
 ```shell
 docker-compose up -d
 ```
 
-## Install docker & docker-compose
-- If you use `debian`, just do it.
+## 安装 docker & docker-compose
+- 如果你使用的是 `debian` 操作系统, 可以使用如下脚本:
 ```
     ./script/debian-install-docker.sh
     ./script/linux-install-docker-compose.sh
 ```
 
-## Set Proxy
-
-path : `~/.docker/config.json`
-
-content : 
-```
-{
-    "proxies": {
-        "default": {
-         "httpProxy": "http://ip:port",
-         "httpsProxy": "http://ip:port"
-        }
-    }
-}
-```
 
