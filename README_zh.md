@@ -30,15 +30,15 @@
     docker-compose up -d
 ```
 
-- 默认的 数据库(mysql5.7) 配置:
+- 默认的 数据库(mysql8.0) 配置:
 
 ```bash
-    driver=mysql5.7+
+    driver=mysql8.0
     host=mysql-jira
     port=3306
     db=jira
-    user=jira
-    passwd=123123
+    user=root
+    passwd=123456
 ```
 
 ## 使用 docker 启动
@@ -46,7 +46,7 @@
 - 启动 jira
 
 ```
-    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:rm
+    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.4.0
 ```
 
 - 然后配置你的数据库

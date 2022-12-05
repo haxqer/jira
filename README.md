@@ -30,15 +30,15 @@ default port: 8080
     docker-compose up -d
 ```
 
-- default db(mysql5.7) configure:
+- default db(mysql8.0) configure:
 
 ```bash
-    driver=mysql5.7+
+    driver=mysql8.0
     host=mysql-jira
     port=3306
     db=jira
-    user=jira
-    passwd=123123
+    user=root
+    passwd=123456
 ```
 
 ## How to run with docker
@@ -46,7 +46,7 @@ default port: 8080
 - start jira
 
 ```
-    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:rm
+    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.4.0
 ```
 
 - config your own db:
