@@ -2,6 +2,9 @@
 
 [kubernetes helm charts](https://github.com/haxqer/charts)
 
+
+[jira 9.5.0](https://github.com/haxqer/jira/tree/9.5.0)
+
 # jira
 
 [README](README.md) | [中文文档](README_zh.md)
