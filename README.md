@@ -121,3 +121,17 @@ content :
 }
 ```
 
+## Hacker Jira Service Management(jsm)
+
+Thanks to:
++ [d1m0nstr](https://github.com/d1m0nstr) for [Jira Service Management](https://github.com/haxqer/jira/issues/11)
+
+```
+docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -p jsm \
+    -m haxqer666@gmail.com \
+    -n haxqer666@gmail.com \
+    -o http://website/ \
+    -s you-server-id
+```
+
