@@ -121,7 +121,7 @@ content :
 }
 ```
 
-## Hacker Jira Service Management(jsm)
+## Hack Jira Service Management(jsm) Plugin
 
 Thanks to:
 + [d1m0nstr](https://github.com/d1m0nstr) for [Jira Service Management](https://github.com/haxqer/jira/issues/11)
