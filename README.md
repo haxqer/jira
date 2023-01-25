@@ -3,7 +3,7 @@
 [kubernetes helm charts](https://github.com/haxqer/charts)
 
 
-[jira 9.5.0](https://github.com/haxqer/jira/tree/9.5.0)
+[jira 9.6.0](https://github.com/haxqer/jira/tree/9.6.0)
 
 # jira
 
@@ -49,7 +49,7 @@ default port: 8080
 - start jira
 
 ```
-    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.4.0
+    docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.6.0
 ```
 
 - config your own db:
