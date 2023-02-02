@@ -7,6 +7,10 @@
 
 [README](README.md) | [中文文档](README_zh.md)
 
++ Long Term Support Version: v9.4.2
++ Latest Version: v9.6.0
+
+
 默认端口: `8080`
 
 ## 环境要求
