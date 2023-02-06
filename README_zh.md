@@ -10,6 +10,8 @@
 + Long Term Support Version: v9.4.2
 + Latest Version: v9.6.0
 
++ [Arm Version](https://github.com/haxqer/jira/blob/rm/README_zh.md#arm)
+
 
 默认端口: `8080`
 
@@ -114,12 +116,22 @@ docker-compose rm
 docker-compose up -d
 ```
 
-## 安装 docker & docker-compose
-- 如果你使用的是 `debian` 操作系统, 可以使用如下脚本:
+## Arm
+已经测试过的机器:
++ Mac mini(M1,2020)
+
+感谢:
++ [odidev](https://github.com/odidev) 提供的 arm image.
+
 ```
-    ./script/debian-install-docker.sh
-    ./script/linux-install-docker-compose.sh
+    git clone https://github.com/haxqer/jira.git \
+        && cd jira \
+        && git checkout rm && cd lts_arm \
+        && docker-compose pull \
+        && docker-compose up
 ```
+
+
 
 
 ## 破解 Jira Service Management(jsm)

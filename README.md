@@ -11,6 +11,9 @@
 + Latest Version: v9.6.0
 
 
++ [Arm Version](https://github.com/haxqer/jira#arm)
+
+
 default port: 8080
 
 ## requirement
@@ -100,27 +103,20 @@ enter `y`, then start server
 docker-compose up -d
 ```
 
-## Install docker & docker-compose
-- If you use `debian`, just do it.
-```
-    ./script/debian-install-docker.sh
-    ./script/linux-install-docker-compose.sh
-```
+## Arm
+Not completely tested.
+Tested machines:
++ Mac mini(M1,2020)
 
-## Set Proxy
+Thanks to:
++ [odidev](https://github.com/odidev) for the Arm image.
 
-path : `~/.docker/config.json`
-
-content : 
 ```
-{
-    "proxies": {
-        "default": {
-         "httpProxy": "http://ip:port",
-         "httpsProxy": "http://ip:port"
-        }
-    }
-}
+    git clone https://github.com/haxqer/jira.git \
+        && cd jira \
+        && git checkout rm && cd lts_arm \
+        && docker-compose pull \
+        && docker-compose up
 ```
 
 ## Hack Jira Service Management(jsm) Plugin
