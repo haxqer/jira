@@ -7,8 +7,8 @@
 
 [README](README.md) | [中文文档](README_zh.md)
 
-+ Long Term Support Version: v9.4.4
-+ Latest Version: v9.7.0
++ Long Term Support Version: v9.4.5
++ Latest Version: v9.8.0
 
 
 + [Arm Version](https://github.com/haxqer/jira#arm)
@@ -54,7 +54,7 @@ default port: 8080
 - start jira
 
 ```
-    docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.7.0
+    docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.8.0
 ```
 
 - config your own db:
@@ -65,9 +65,9 @@ default port: 8080
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -p jira \
-    -m haxqer666@gmail.com \
-    -n haxqer666@gmail.com \
-    -o http://website \
+    -m Hello@world.com \
+    -n Hello@world.com \
+    -o your-org \
     -s you-server-id-xxxx
 ```
 
@@ -81,9 +81,9 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -p eu.softwareplant.biggantt \
-    -m haxqer666@gmail.com \
-    -n haxqer666@gmail.com \
-    -o http://website \
+    -m Hello@world.com \
+    -n Hello@world.com \
+    -o your-org \
     -s you-server-id-xxxx
 ```
 
@@ -127,9 +127,9 @@ Thanks to:
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -p jsm \
-    -m haxqer666@gmail.com \
-    -n haxqer666@gmail.com \
-    -o http://website/ \
+    -m Hello@world.com \
+    -n Hello@world.com \
+    -o your-org/ \
     -s you-server-id
 ```
 
