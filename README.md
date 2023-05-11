@@ -7,7 +7,7 @@
 
 [README](README.md) | [中文文档](README_zh.md)
 
-+ Long Term Support Version: v9.4.5
++ Long Term Support Version: v9.4.6
 + Latest Version: v9.8.0
 
 
