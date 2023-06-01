@@ -89,6 +89,19 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
 
 4. Paste your license 
 
+## `Datacenter` license
+Generate `datacenter` license by adding `-d` parameter.
+```
+docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -d \
+    -p jira \
+    -m Hello@world.com \
+    -n Hello@world.com \
+    -o your-org \
+    -s you-server-id-xxxx
+```
+
+
 ## How to upgrade
 
 ```shell
