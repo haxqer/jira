@@ -7,7 +7,7 @@
 
 [README](README.md) | [中文文档](README_zh.md)
 
-+ Long Term Support Version: v9.4.8
++ Long Term Support Version: v9.4.9
 + Latest Version: v9.10.0
 
 + [Arm Version](https://github.com/haxqer/jira/blob/rm/README_zh.md#arm)
