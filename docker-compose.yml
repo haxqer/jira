@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   jira:
-    image: haxqer/jira:9.10.0
+    image: haxqer/jira:9.11.0
     container_name: jira-srv
     environment:
       - TZ=Asia/Shanghai
@@ -19,7 +19,7 @@ services:
       - network-bridge
 
   mysql:
-    image: mysql:8
+    image: mysql:8.0
     container_name: mysql-jira
     environment:
       - TZ=Asia/Shanghai

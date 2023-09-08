@@ -19,7 +19,7 @@ services:
       - network-bridge
 
   mysql:
-    image: mysql:8
+    image: mysql:8.0
     container_name: mysql-jira
     environment:
       - TZ=Asia/Shanghai
