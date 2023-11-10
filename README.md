@@ -14,7 +14,7 @@
 + [Arm Version](https://github.com/haxqer/jira#arm)
 
 
-default port: 8080
+default port: `8080`
 
 ## requirement
 - docker: 17.09.0+
