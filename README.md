@@ -7,8 +7,8 @@
 
 [README](README.md) | [中文文档](README_zh.md)
 
-+ Long Term Support Version: v9.4.11
-+ Latest Version: v9.11.2
++ Long Term Support Version: v9.4.12
++ Latest Version: v9.11.3
 
 
 + [Arm Version](https://github.com/haxqer/jira#arm)
@@ -25,28 +25,28 @@ default port: 8080
 - start jira & mysql
 
 ```
-    git clone https://github.com/haxqer/jira.git \
-        && cd jira \
-        && git checkout rm \
-        && docker-compose pull \
-        && docker-compose up
+git clone https://github.com/haxqer/jira.git \
+    && cd jira \
+    && git checkout rm \
+    && docker-compose pull \
+    && docker-compose up
 ```
 
 - start jira & mysql daemon
 
 ```
-    docker-compose up -d
+docker-compose up -d
 ```
 
 - default db(mysql8.0) configure:
 
 ```bash
-    driver=mysql8.0
-    host=mysql-jira
-    port=3306
-    db=jira
-    user=root
-    passwd=123456
+driver=mysql8.0
+host=mysql-jira
+port=3306
+db=jira
+user=root
+passwd=123456
 ```
 
 ## How to run with docker
@@ -54,7 +54,7 @@ default port: 8080
 - start jira
 
 ```
-    docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.11.2
+docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.11.3
 ```
 
 - config your own db:
@@ -64,6 +64,7 @@ default port: 8080
 
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -d \
     -p jira \
     -m Hello@world.com \
     -n Hello@world.com \
@@ -80,6 +81,7 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
 
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -d \
     -p eu.softwareplant.biggantt \
     -m Hello@world.com \
     -n Hello@world.com \
@@ -87,22 +89,7 @@ docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
     -s you-server-id-xxxx
 ```
 
-4. Paste your license 
-
-## `Datacenter` license
-
-Generate `datacenter` license by adding `-d` parameter.
-
-```
-docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
-    -d \
-    -p jira \
-    -m Hello@world.com \
-    -n Hello@world.com \
-    -o your-org \
-    -s you-server-id-xxxx
-```
-
+4. Paste your license
 
 ## How to upgrade
 
@@ -127,11 +114,11 @@ Thanks to:
 + [odidev](https://github.com/odidev) for the Arm image.
 
 ```
-    git clone https://github.com/haxqer/jira.git \
-        && cd jira \
-        && git checkout rm && cd lts_arm \
-        && docker-compose pull \
-        && docker-compose up
+git clone https://github.com/haxqer/jira.git \
+    && cd jira \
+    && git checkout rm && cd lts_arm \
+    && docker-compose pull \
+    && docker-compose up
 ```
 
 ## Hack Jira Service Management(jsm) Plugin
@@ -141,6 +128,7 @@ Thanks to:
 
 ```
 docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
+    -d \
     -p jsm \
     -m Hello@world.com \
     -n Hello@world.com \
