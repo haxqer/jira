@@ -1,13 +1,12 @@
 [![docker pulls](https://img.shields.io/docker/pulls/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/)  [![docker stars](https://img.shields.io/docker/stars/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/) [![image metadata](https://images.microbadger.com/badges/image/haxqer/jira.svg)](https://microbadger.com/images/haxqer/jira "haxqer/jira image metadata")
 
-[kubernetes helm charts](https://github.com/haxqer/charts)
-
+After 2024, both Jira and Confluence only support the datacenter license. To generate a datacenter license, add the `-d` parameter.
 
 # jira
 
 [README](README.md) | [中文文档](README_zh.md)
 
-+ Long Term Support Version: v9.4.14
++ Long Term Support Version: v9.4.15
 + Latest Version: v9.12.1
 
 
