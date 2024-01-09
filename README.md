@@ -1,6 +1,6 @@
 [![docker pulls](https://img.shields.io/docker/pulls/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/)  [![docker stars](https://img.shields.io/docker/stars/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/) [![image metadata](https://images.microbadger.com/badges/image/haxqer/jira.svg)](https://microbadger.com/images/haxqer/jira "haxqer/jira image metadata")
 
-After 2024, both Jira and Confluence only support the datacenter license. To generate a datacenter license, add the `-d` parameter.
+New Confluence releases support only Data Center licenses. To generate a datacenter license, add the `-d` parameter.
 
 # jira
 
