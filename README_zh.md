@@ -12,6 +12,7 @@
 
 + [Arm Version](https://github.com/haxqer/jira/blob/rm/README_zh.md#arm)
 
+新的Confluence/Jira版本仅支持数据中心许可证
 
 默认端口: `8080`
 

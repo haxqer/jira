@@ -1,7 +1,5 @@
 [![docker pulls](https://img.shields.io/docker/pulls/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/)  [![docker stars](https://img.shields.io/docker/stars/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/) [![image metadata](https://images.microbadger.com/badges/image/haxqer/jira.svg)](https://microbadger.com/images/haxqer/jira "haxqer/jira image metadata")
 
-New Confluence releases support only Data Center licenses. To generate a datacenter license, add the `-d` parameter.
-
 # jira
 
 [README](README.md) | [中文文档](README_zh.md)
@@ -12,6 +10,7 @@ New Confluence releases support only Data Center licenses. To generate a datacen
 
 + [Arm Version](https://github.com/haxqer/jira#arm)
 
+New Confluence/Jira releases support only Data Center licenses. To generate a Data Center licenses, add the `-d` parameter.
 
 default port: `8080`
 
