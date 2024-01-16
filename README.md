@@ -5,7 +5,7 @@
 [README](README.md) | [中文文档](README_zh.md)
 
 + Long Term Support Version: v9.4.15
-+ Latest Version: v9.12.1
++ Latest Version: v9.12.2
 
 
 + [Arm Version](https://github.com/haxqer/jira#arm)
@@ -52,7 +52,7 @@ passwd=123456
 - start jira
 
 ```
-docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.12.1
+docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.12.2
 ```
 
 - config your own db:
