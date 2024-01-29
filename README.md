@@ -1,136 +1,49 @@
-[![docker pulls](https://img.shields.io/docker/pulls/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/)  [![docker stars](https://img.shields.io/docker/stars/haxqer/jira.svg)](https://hub.docker.com/r/haxqer/jira/) [![image metadata](https://images.microbadger.com/badges/image/haxqer/jira.svg)](https://microbadger.com/images/haxqer/jira "haxqer/jira image metadata")
 
-# jira
+# 容器环境
 
-[README](README.md) | [中文文档](README_zh.md)
+假定你已经了解 Docker 容器相关基础知识。
 
-+ Long Term Support Version: v9.4.15
-+ Latest Version: v9.12.2
+## Debian / CentOS 中安装
+- https://docs.docker.com/engine/install/debian/
+- https://docs.docker.com/engine/install/centos/
 
+## 网络环境（可能需要关注）
 
-+ [Arm Version](https://github.com/haxqer/jira#arm)
+### 代理设置
+注意：需要正常的网络环境，默认从 Docker Hub 拉取镜像。
 
-New Confluence/Jira releases support only Data Center licenses. To generate a Data Center licenses, add the `-d` parameter.
+不能访问 Docker Hub 时可能需要设置下面两种代理：
+- `docker pull` 代理
+- `docker build` 代理，这个在 `docker/.env` 中配置 `HTTP_PROXY` / `HTTPS_PROXY`
 
-default port: `8080`
+代理设置可以看这个文档（没有验证）：https://cloud.tencent.com/developer/article/1806455
 
-## requirement
-- docker: 17.09.0+
-- docker-compose: 1.24.0+
+当然，你也可以在网关设备上设置自动科学上网，这样就可以绕开代理设置的麻烦。
 
-## How to run with docker-compose
+### 使用镜像或私有仓库
+如果使用 Harbor 等私有 / 缓存镜像仓库，可以设置 `docker/.env` 中 `IMAGE_PREFIX` 参数，注意末尾的 `/`。
 
-- start jira & mysql
+# 容器启动
+检出或解压后，进入项目目录，已经测试过 Debian / CentOS / Windows，理论上其他 Docker X86 系统都支持。
+- 在 Debian / CentOS 上执行：
+    ```
+    ./build.sh
+    ```
+- 打开浏览器执行安装向导：`http://YOU_SERVER_IP:8080/`，进入到输入许可时看下面的步骤；
+- 执行 `./keygen.sh` 生成 Jira 许可，拷贝许可部分到上述页面中；
+- 如果需要将 Jira 运行在一个 Proxy（如：nginx）后面，需要设置`docker/docker-compose.yml` 及 `docker/.env` 中的 `ATL_` 前缀相关配置。
+- 如果要升级 Jira 至更新版本，三个步骤：
+    ```
+    # 停止并清理 Docker 容器，该命令不会删除本地数据
+    ./cleanup.sh
+    # 修改 docker/.env 中的版本号
+    vi ./docker/.env
+    # 再次执行下面命令：
+    ./build.sh
+    ```
 
+# FAQ：
+如何生成 **Atlassian Marketplace for JIRA** 上安装的插件的许可？
 ```
-git clone https://github.com/haxqer/jira.git \
-    && cd jira \
-    && git checkout rm \
-    && docker-compose pull \
-    && docker-compose up
-```
-
-- start jira & mysql daemon
-
-```
-docker-compose up -d
-```
-
-- default db(mysql8.0) configure:
-
-```bash
-driver=mysql8.0
-host=mysql-jira
-port=3306
-db=jira
-user=root
-passwd=123456
-```
-
-## How to run with docker
-
-- start jira
-
-```
-docker volume create jira_home_data && docker network create jira-network && docker run -p 8080:8080 -v jira_home_data:/var/jira --network jira-network --name jira-srv -e TZ='Asia/Shanghai' haxqer/jira:9.12.2
-```
-
-- config your own db:
-
-
-## How to hack jira
-
-```
-docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
-    -d \
-    -p jira \
-    -m Hello@world.com \
-    -n Hello@world.com \
-    -o your-org \
-    -s you-server-id-xxxx
-```
-
-## How to hack jira plugin
-
-- .eg I want to use BigGantt plugin
-1. Install BigGantt from jira marketplace.
-2. Find `App Key` of BigGantt is : `eu.softwareplant.biggantt`
-3. Execute :
-
-```
-docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
-    -d \
-    -p eu.softwareplant.biggantt \
-    -m Hello@world.com \
-    -n Hello@world.com \
-    -o your-org \
-    -s you-server-id-xxxx
-```
-
-4. Paste your license
-
-## How to upgrade
-
-```shell
-cd jira && git pull
-docker pull haxqer/jira:rm && docker-compose stop
-docker-compose rm
-```
-
-enter `y`, then start server
-
-```shell
-docker-compose up -d
-```
-
-## Arm
-Not completely tested.
-Tested machines:
-+ Mac mini(M1,2020)
-
-Thanks to:
-+ [odidev](https://github.com/odidev) for the Arm image.
-
-```
-git clone https://github.com/haxqer/jira.git \
-    && cd jira \
-    && git checkout rm && cd lts_arm \
-    && docker-compose pull \
-    && docker-compose up
-```
-
-## Hack Jira Service Management(jsm) Plugin
-
-Thanks to:
-+ [d1m0nstr](https://github.com/d1m0nstr) for [Jira Service Management](https://github.com/haxqer/jira/issues/11)
-
-```
-docker exec jira-srv java -jar /var/agent/atlassian-agent.jar \
-    -d \
-    -p jsm \
-    -m Hello@world.com \
-    -n Hello@world.com \
-    -o your-org/ \
-    -s you-server-id
-```
-
+./keygen.sh -p 插件名
+````
