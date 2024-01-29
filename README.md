@@ -1,15 +1,20 @@
+# jira
 
-# 容器环境
+All code and docs by [xsharp](https://github.com/xsharp).
+
+---
+
+## 容器环境
 
 假定你已经了解 Docker 容器相关基础知识。
 
-## Debian / CentOS 中安装
+### Debian / CentOS 中安装
 - https://docs.docker.com/engine/install/debian/
 - https://docs.docker.com/engine/install/centos/
 
-## 网络环境（可能需要关注）
+### 网络环境（可能需要关注）
 
-### 代理设置
+#### 代理设置
 注意：需要正常的网络环境，默认从 Docker Hub 拉取镜像。
 
 不能访问 Docker Hub 时可能需要设置下面两种代理：
@@ -20,10 +25,10 @@
 
 当然，你也可以在网关设备上设置自动科学上网，这样就可以绕开代理设置的麻烦。
 
-### 使用镜像或私有仓库
+#### 使用镜像或私有仓库
 如果使用 Harbor 等私有 / 缓存镜像仓库，可以设置 `docker/.env` 中 `IMAGE_PREFIX` 参数，注意末尾的 `/`。
 
-# 容器启动
+## 容器启动
 检出或解压后，进入项目目录，已经测试过 Debian / CentOS / Windows，理论上其他 Docker X86 系统都支持。
 - 在 Debian / CentOS 上执行：
     ```
@@ -42,7 +47,7 @@
     ./build.sh
     ```
 
-# FAQ：
+## FAQ：
 如何生成 **Atlassian Marketplace for JIRA** 上安装的插件的许可？
 ```
 ./keygen.sh -p 插件名
