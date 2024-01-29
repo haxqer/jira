@@ -9,7 +9,7 @@
 
 + Long Term Support Version: v9.4.15
 + Latest Version: v9.12.2
-
++ [新的使用方式](https://github.com/haxqer/jira/tree/build-your-own) ，您可方便自行升级、修改各参数，支持https (感谢 [xsharp](https://github.com/xsharp)).
 + [Arm Version](https://github.com/haxqer/jira/blob/rm/README_zh.md#arm)
 
 新的Confluence/Jira版本仅支持数据中心许可证
